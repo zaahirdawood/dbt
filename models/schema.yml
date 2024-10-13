@@ -1,7 +1,8 @@
-# Configuring sources
+version: 2
+
 sources:
   - name: TPCH_SF1000
-    database: SNOWFLAKE_SAMPLE_DATA   # The source database in Snowflake
-    schema: TPCH_SF1000               # The source schema where raw data is stored
+    database: SNOWFLAKE_SAMPLE_DATA
+    schema: TPCH_SF1000
     tables:
-      - name: CUSTOMER                # The source table to be used
+      - name: CUSTOMER
