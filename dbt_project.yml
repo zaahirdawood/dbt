@@ -1,7 +1,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'my_new_project'
+name: 'jaffle_shop'
 version: '1.0.0'
 config-version: 2
 
@@ -34,11 +34,12 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  my_new_project:
+  jaffle_shop:
     # Applies to all files under models/example/
-    example:
+    marts:
       +materialized: table
-      +database: 'DBT_ZDAWOOD'  # The target database where your transformed data will be written
+      +database: 'analytics'  # The target database where your transformed data will be written
       +schema: 'transformation' # The target schema where your transformed data will be written
-
+    staging:
+      +materialized: view
 
