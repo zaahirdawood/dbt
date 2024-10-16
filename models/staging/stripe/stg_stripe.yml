@@ -9,12 +9,12 @@ models:
         tests:
           - unique
           - not_null
-      - name: order_id 
+      - name: order_id
         description: a foreign key to payment_id
         tests:
           - unique
           - not_null
-        
+
       - name: payment_method
         description: the method of payment (e.g., card, bank transfer)
       - name: status
@@ -24,4 +24,4 @@ models:
       - name: created_at
         description: timestamp when the payment was created
       - name: _batched_at
-        description:​ the time when the payment data is batched at
+        description: the time when the payment data is batched
