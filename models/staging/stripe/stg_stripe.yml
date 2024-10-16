@@ -1,0 +1,27 @@
+version: 2 
+
+
+models:
+  - name: stg_stripe__payments
+    description: one unique payment per row
+    columns:
+      - name: payment_id
+        description: primary key
+        tests:
+          - unique
+          - not_null
+      - name: order_id 
+        description: a foreign key to payment_id
+      - name: payment_method
+        description:
+      - name: status
+        description: "{{ doc('payment_status') }}"
+      - name: amount
+        description:
+      - name: created_at
+        description:
+      - name: _batched_at
+        description:
+
+
+
