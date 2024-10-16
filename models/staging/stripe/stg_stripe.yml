@@ -1,5 +1,4 @@
-version: 2 
-
+version: 2
 
 models:
   - name: stg_stripe__payments
@@ -12,16 +11,17 @@ models:
           - not_null
       - name: order_id 
         description: a foreign key to payment_id
+        tests:
+          - unique
+          - not_null
+        
       - name: payment_method
-        description:
+        description: the method of payment (e.g., card, bank transfer)
       - name: status
         description: "{{ doc('payment_status') }}"
       - name: amount
-        description:
+        description: the total payment amount
       - name: created_at
-        description:
+        description: timestamp when the payment was created
       - name: _batched_at
-        description:
-
-
-
+        description:​ the time when the payment data is batched at
