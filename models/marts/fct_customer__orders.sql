@@ -1,4 +1,4 @@
--- import ctes
+-- Import CTEs
 with
 
     customers as (select * from {{ source("jaffle_shop", "customers") }}),
@@ -7,7 +7,8 @@ with
 
     payments as (select * from {{ source("stripe", "payment") }}),
 
-    -- logical ctes
+-- Logical CTEs
+    -- Staging
     base_customers as (select first_name || ' ' || last_name as name, * from customers),
 
     a as (
@@ -21,7 +22,8 @@ with
     ),
 
     b as (select first_name || ' ' || last_name as name, * from customers),
-
+    
+    -- Marts
     customer_order_history as (
 
         select
@@ -76,7 +78,8 @@ with
 
     ),
 
-    -- FINAL CTEs
+-- FINAL CTEs
+
     final as (
 
         select
@@ -103,4 +106,5 @@ with
     )
 
 -- Simple Select Statement
+
 select * from final
